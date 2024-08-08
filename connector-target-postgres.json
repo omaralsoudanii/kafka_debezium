@@ -14,9 +14,12 @@
         "transforms.unwrap.type": "io.debezium.transforms.ExtractNewRecordState",
         "transforms.unwrap.drop.tombstones": "false",
         "auto.create": "true",
-        "insert.mode": "INSERT",
-        "delete.enabled": "false",
+        "insert.mode": "upsert",
+        "delete.enabled": "true",
+        "delete.mode": "delete",
+        "error.tolerance": "all",
         "pk.fields": "id",
-        "pk.mode": "record_key"
+        "primary.key.mode": "record_key",
+        "logger.level": "DEBUG"
     }
 }
