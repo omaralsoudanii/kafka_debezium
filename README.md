@@ -22,7 +22,7 @@ CREATE PUBLICATION kafka_test FOR ALL tables;
 ```
 
 A dummy table:
-```
+```sql
 CREATE TABLE public.auth_user (
 	id serial4 NOT NULL,
 	"password" varchar(128) NOT NULL,
@@ -38,10 +38,10 @@ CREATE TABLE public.auth_user (
 CREATE INDEX auth_user_username_6821ab7c_like ON public.auth_user USING btree (username varchar_pattern_ops);
 ```
 
-### source DB
+### Source DB
 
 A dummy table:
-```
+```sql
 CREATE TABLE public.auth_user (
 	id serial4 NOT NULL,
 	"password" varchar(128) NOT NULL,
@@ -71,7 +71,7 @@ Once you have the IP:
 
 Now you can add the two connectors for Kafka with Curl:
 
-```
+```curl
 curl -i -X POST -H "Accept:application/json" -H  "Content-Type:application/json" http://localhost:8083/connectors/ -d @connector-source-postgres.json
 ```
 
