@@ -1,0 +1,22 @@
+{
+    "name": "olap-connector",
+    "config": {
+        "connector.class": "io.debezium.connector.jdbc.JdbcSinkConnector",
+        "tasks.max": "1",
+        "dialect.name": "PostgreSqlDatabaseDialect",
+        "table.name.format": "auth_user",
+        "topics": "auth.public.auth_user",
+        "connection.url": "jdbc:postgresql://192.168.1.25:5433/test_db_target",
+        "connection.username": "postgres",
+        "connection.password": "postgres",
+        "db.name": "test_db_target",
+        "transforms": "unwrap",
+        "transforms.unwrap.type": "io.debezium.transforms.ExtractNewRecordState",
+        "transforms.unwrap.drop.tombstones": "false",
+        "auto.create": "true",
+        "insert.mode": "INSERT",
+        "delete.enabled": "false",
+        "pk.fields": "id",
+        "pk.mode": "record_key"
+    }
+}

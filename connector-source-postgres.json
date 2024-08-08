@@ -1,0 +1,15 @@
+{
+    "name": "oltp-connector",
+    "config": {
+      "connector.class": "io.debezium.connector.postgresql.PostgresConnector",
+      "database.hostname": "192.168.1.25", 
+      "database.port": "5333",
+      "database.user": "postgres",
+      "database.password": "postgres",
+      "database.dbname" : "test_db",
+      "topic.prefix": "auth",
+      "schema.include.list": "public",
+      "table.include.list": "public.auth_user",
+      "plugin.name": "pgoutput"
+    }
+  }
