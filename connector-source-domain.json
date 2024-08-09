@@ -1,5 +1,5 @@
 {
-    "name": "oltp-connector",
+    "name": "oltp-connector-domain",
     "config": {
       "connector.class": "io.debezium.connector.postgresql.PostgresConnector",
       "database.hostname": "192.168.1.25", 
@@ -7,11 +7,11 @@
       "database.user": "postgres",
       "database.password": "postgres",
       "database.dbname" : "test_db",
-      "topic.prefix": "auth",
+      "topic.prefix": "domain",
       "schema.include.list": "public",
-      "table.include.list": "public.auth_user",
+      "table.include.list": "public.mlp_test_domain",
       "plugin.name": "pgoutput",
-      "slot.name": "auth_user",
+      "slot.name": "mlp_test_domain",
       "publication_name": "mlp_test_domain"
     }
   }
